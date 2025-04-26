@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Submission</title>
+    <style>
+        /* Basic styling for form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Button styling */
+        .view-records-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .view-records-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Success message styling */
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+
+    <form id="feedbackForm">
+        <!-- First Name Field -->
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required />
+
+        <!-- Last Name Field -->
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required />
+
+        <!-- Email Field -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <!-- Message Field -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message">
+        Thank you for your feedback! Your submission has been received successfully.
+    </div>
+
+    <!-- Button to view feedback records -->
+    <a class="view-records-btn" href="https://ov0uwmgb1j.execute-api.eu-west-2.amazonaws.com/dev/feedback/records">
+        View Feedback Records
+    </a>
+
+    <script>
+        // Handle form submission
+        document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+            e.preventDefault();  // Prevent form from submitting the default way
+
+            // Get form values
+            const firstName = document.getElementById("first_name").value;
+            const lastName = document.getElementById("last_name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Create JSON object with all form data
+            const feedbackData = {
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                message: message
+            };
+
+            // Make a POST request to the API endpoint
+            fetch('https://ov0uwmgb1j.execute-api.eu-west-2.amazonaws.com/dev/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(feedbackData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show the success message
+                document.getElementById("successMessage").style.display = "block";
+
+                // Optionally, hide the form after successful submission
+                document.getElementById("feedbackForm").reset();
+            })
+            .catch(error => {
+                alert('Error submitting feedback.');  // Display error message
+            });
+        });
+    </script>
+</body>
+</html>

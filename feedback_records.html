@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Feedback Records</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f5f8;  /* New background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #343a40;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Container to hold the feedback records */
+        .feedback-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px; /* Increased space between records */
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .feedback-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e1e1e1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feedback-card h3 {
+            color: #007bff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .feedback-card p {
+            color: #495057;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        /* Styles for better bullet points */
+        .feedback-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feedback-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px; /* Increased space between bullet points */
+            font-size: 1rem;
+        }
+
+        .feedback-card li:before {
+            content: '\2022';
+            color: #007bff;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Link to submit new feedback */
+        a {
+            display: block;
+            width: fit-content;
+            margin-top: 40px;
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .feedback-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .feedback-card {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feedback-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Feedback Records</h1>
+
+    <!-- Container to hold individual feedback records -->
+    <div class="feedback-container">
+        <!-- Injecting feedback records dynamically -->
+        {{feedback_records}}
+    </div>
+
+    <br>
+
+    <!-- Link to submit new feedback -->
+    <a href="https://ov0uwmgb1j.execute-api.eu-west-2.amazonaws.com/dev/feedback">Submit New Feedback</a>
+</body>
+</html>
