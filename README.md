@@ -126,7 +126,7 @@ Email notification for every feedback:
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to fork and submit a PR.
+Contributions, issues, and feature requests are welcome! Feel free to fork.
 
 ---
 
