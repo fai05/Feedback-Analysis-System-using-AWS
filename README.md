@@ -15,9 +15,7 @@ A fully serverless cloud-native application designed to collect, analyze, and no
 ---
 
 ## 🧱 Architecture Diagram
-
-![Architecture](architecture.png)
-
+![diagram-export-4-26-2025-10_51_31-PM](https://github.com/user-attachments/assets/450524cd-119c-465f-91fd-a1b0341ef3c3)
 
 
 ---
@@ -31,9 +29,6 @@ A fully serverless cloud-native application designed to collect, analyze, and no
 - **Notifications**: Amazon SNS (Email)
 - **Monitoring**: Amazon CloudWatch
 - **API Gateway**: To expose Lambda as an endpoint
-
----
-
 
 ---
 
