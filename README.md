@@ -124,7 +124,7 @@ Email notification for every feedback:
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contribution
 
 Contributions, issues, and feature requests are welcome! Feel free to fork.
 
