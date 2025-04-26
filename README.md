@@ -6,7 +6,7 @@ A fully serverless cloud-native application designed to collect, analyze, and no
 ## 💡 Features
 
 - 📥 Collect feedback via a web form
-- 🧠 Analyze message sentiment (Positive, Negative, Neutral, Mixed)
+- 🧠 Analyze message sentiment (Positive, Negative, Neutral)
 - 📩 Notify team members based on sentiment
 - 🗂 Store structured feedback in DynamoDB
 - 📊 Monitor logs using CloudWatch
@@ -30,7 +30,7 @@ A fully serverless cloud-native application designed to collect, analyze, and no
 - **Sentiment Analysis**: Amazon Comprehend
 - **Notifications**: Amazon SNS (Email)
 - **Monitoring**: Amazon CloudWatch
-- **API Gateway** *(optional)*: To expose Lambda as an endpoint
+- **API Gateway**: To expose Lambda as an endpoint
 
 ---
 
@@ -43,7 +43,6 @@ A fully serverless cloud-native application designed to collect, analyze, and no
 
 - AWS account with access to Lambda, DynamoDB, Comprehend, SNS, and CloudWatch
 - IAM roles with proper permissions
-- AWS CLI configured locally *(optional for deployment)*
 
 ---
 
@@ -76,7 +75,7 @@ The Lambda function should:
 
 ---
 
-### 4. 🌐 Optional: Deploy with API Gateway
+### 4. 🌐 Deploy with API Gateway
 
 Use API Gateway to expose your Lambda as an HTTP endpoint:
 
@@ -96,14 +95,28 @@ Use API Gateway to expose your Lambda as an HTTP endpoint:
 
 ---
 
-## 📌 Example Feedback Flow
+## 📌 Sample Output
 
-1. User fills form and submits feedback  
-2. Lambda receives it, triggers sentiment analysis  
-3. Stores: `{ email, message, sentiment, timestamp }` in DynamoDB  
-4. Sends SNS email to stakeholders with:  
-   `"User abc@example.com said: 'Loved the product!' — Sentiment: Positive"`  
-5. Logs entire process in CloudWatch
+Feedback form (before submission):
+![image](https://github.com/user-attachments/assets/59a93a19-6003-4fa6-bde7-5c8fad9b42f8)
+
+
+
+Feedback form (after submission):
+![image](https://github.com/user-attachments/assets/09126a88-1348-4dfb-921a-2b6bf31ff36e)
+
+
+
+Feedback records (viewing all responses):
+![image](https://github.com/user-attachments/assets/6ae30489-fe42-48bb-8fdf-bd8597e97c4e)
+
+
+
+Email notification for every feedback:
+![image](https://github.com/user-attachments/assets/bcddd968-d161-4d09-85d3-e37da69ab536)
+
+
+
 
 ---
 
