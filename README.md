@@ -1,13 +1,5 @@
-# Sentiment-analysis-with-AWS
-# 📨 AWS Serverless Feedback Analysis System
-
+# Feedback Analysis System using AWS
 A fully serverless cloud-native application designed to collect, analyze, and notify customer feedback in real time using AWS services. Built for scalability, low maintenance, and AI-powered insights using sentiment analysis.
-
----
-
-## 📌 Overview
-
-This project enables users to submit feedback via a simple HTML form. The feedback is processed by an AWS Lambda backend, analyzed for sentiment using Amazon Comprehend, stored in DynamoDB, and relevant stakeholders are notified through Amazon SNS. All activity is logged using Amazon CloudWatch for monitoring and debugging.
 
 ---
 
@@ -25,6 +17,8 @@ This project enables users to submit feedback via a simple HTML form. The feedba
 ## 🧱 Architecture Diagram
 
 ![Architecture](architecture.png)
+
+
 
 ---
 
