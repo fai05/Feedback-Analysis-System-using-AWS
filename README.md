@@ -129,19 +129,12 @@ Email notification for every feedback:
 
 ---
 
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to fork and submit a PR.
 
 ---
 
-## 📬 Contact
-
 Created by Faiza Reza
+
 
